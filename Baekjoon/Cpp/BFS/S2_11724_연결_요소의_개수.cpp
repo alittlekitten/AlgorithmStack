@@ -8,7 +8,7 @@ int main() {
 	cin.tie(0);
 	cout.tie(0);
 
-	// DFS
+	// BFS
 	bool chk[1001] = { false, };
 	bool connect[1001][1001] = { false, };
 
