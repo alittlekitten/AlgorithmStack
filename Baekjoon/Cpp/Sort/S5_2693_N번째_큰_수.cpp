@@ -9,7 +9,7 @@ int main() {
 	cin.tie(0);
 	cout.tie(0);
 
-	// 2693번 N번째 큰 수
+	// 2693번 N번째 큰 수 (정렬)
 	int t, tmp;
 	cin >> t;
 	for (int i = 0; i < t; ++i) {
