@@ -15,11 +15,11 @@ int main() {
 	for (int i = 0; i < t; ++i) {
 		vector<int> a;
 		for (int j = 0; j < 10; ++j) {
-			cin >> t;
-			a.push_back(t);
-			sort(a.begin(), a.end());
+			cin >> tmp;
+			a.push_back(tmp);
 		}
-		cout << a[8] << '\n';
+		sort(a.begin(), a.end());
+		cout << a[7] << '\n';
 		a.clear();
 	}
 	
