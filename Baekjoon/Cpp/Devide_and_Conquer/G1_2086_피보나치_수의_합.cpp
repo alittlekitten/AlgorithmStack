@@ -13,7 +13,7 @@ mat mulMat(mat& a, mat& b) {
             for (int k = 0; k < 2; k++) {
                 tmp[i][j] += a[i][k] * b[k][j];
             }
-            tmp[i][j] %= 1000000000; // 곱한걸 1000000007로 나눠줌 (long long이기 때문에 한번에 나눠줘도 무방)
+            tmp[i][j] %= 1000000000; // 곱한걸 1000000000로 나눠줌 (long long이기 때문에 한번에 나눠줘도 무방)
         }
     }
     return tmp;
@@ -49,7 +49,7 @@ int main() {
     ll a, b;
     cin >> a >> b;
     if ((fibo(b + 2) - 1) - (fibo(a + 1) - 1) > 0) cout << (fibo(b + 2) - 1) - (fibo(a + 1) - 1);
-    else cout << (fibo(b + 2) - 1) - (fibo(a + 1) - 1) + 1000000000;
+    else cout << (fibo(b + 2) - 1) - (fibo(a + 1) - 1) + 1000000000; // 음수가 되는 경우 처리
 
     return 0;
 }
