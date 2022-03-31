@@ -13,7 +13,7 @@ int main() {
 
     int tc, n, m, w, s, e, t;
     cin >> tc;
-    for (int i = 0; i < tc; ++i) {
+    for (int tt = 0; tt < tc; ++tt) {
         bool cycle = false; // cycle 여부
         vector<pair<int, int>> v[501]; // 경로
         int dist[501] = { 0 }; // 최단거리
