@@ -13,12 +13,12 @@ int main() {
     // 2819 상근이의 로봇
     // 이분탐색
     int n, m;
-    int ans = 0;
+    long long ans = 0;
     string command;
     cin >> n >> m;
     for (int i = 0; i < n; ++i) {
         cin >> x[i] >> y[i];
-        ans += abs(x[i]) + abs(y[i]);
+        ans += (long)abs(x[i]) + (long)abs(y[i]);
     }
     cin >> command;
 
@@ -30,11 +30,12 @@ int main() {
     int nowX = 0;
     int nowY = 0;
 
+    // 계산 (좌표값이 +되면 n만큼 빼고 자기보다 작은거만큼 2번 더하고, 좌표값이 -되면 n만큼 더하고 자기보다 작은 것만큼 2번 뺀다)
     for (int i = 0; i < m; ++i) {
-        if (command[i] == 'S') ans += n - 2 * (lower_bound(y, y + n, ++nowY) - y);
-        else if (command[i ] == 'J') ans += n - 2 *(lower_bound(y, y + n, --nowY) - y);
-        else if (command[i] == 'I') ans += n - 2 * (lower_bound(x, x + n, --nowX) - x);
-        else if (command[i] == 'Z') ans += n - 2 * (lower_bound(x, x + n, --nowX) - x);
+        if (command[i] == 'S') ans += (long)(2 * (lower_bound(y, y + n, ++nowY) - y) - n);
+        else if (command[i ] == 'J') ans += (long)(n - 2 *(upper_bound(y, y + n, --nowY) - y));
+        else if (command[i] == 'I') ans += (long)(2 * (lower_bound(x, x + n, ++nowX) - x) - n);
+        else if (command[i] == 'Z') ans += (long)(n - 2 * (upper_bound(x, x + n, --nowX) - x));
         cout << ans << '\n';
     }
 
