@@ -6,9 +6,9 @@ using namespace std;
 vector<pair<int, int>> v[1001]; // 간선 담은 벡터
 int dist[1001]; // 최단거리 배열
 int route[1001]; // 이전 경로
-vector<int> order; // 순서 담은 벡터
+vector<int> order; // 경로
 
-void dijkstra(int start) {
+void dijkstra(int start, int end) {
     for (int i = 0; i < 1001; ++i) {
         dist[i] = 100000000; // 하나의 간선의 길이가 1 이상 100000 이하이고, 최악의 경우 999개의 간선을 통해 도시가 연결될 수 있으므로 99900000을 초과하는 값이 들어가야 하므로 1억을 대입
     }
@@ -23,15 +23,17 @@ void dijkstra(int start) {
         int curr = pq.top().second; // 가장 우선순위가 높은 vertex를 curr에 등록
         pq.pop(); // 값을 추출했으니 pq에서 제거
 
+        if (curr == end) return;
+
         if (dist[curr] < w) continue; // w가 기존 비용보다 크면 통과
 
         for (int i = 0; i < v[curr].size(); ++i) { // curr에서 시작하는 간선을 모두 탐색
             int nextw = w + v[curr][i].first; // 그 간선으로 연결된 도착 vertex까지의 거리 (다익스트라 시작점 ~ start까지는 반드시 최단거리)
             int nextv = v[curr][i].second; // 그 간선의 도착 vertex
             if (nextw < dist[nextv]) { // 만약 기존 최단거리보다 더 짧은 거리로 해당 도착지점에 도착할 수 있다면 (버스 비용이 0일 수도 있다..)
+                route[nextv] = curr; // 갱신된 이전 경로를 업데이트
                 dist[nextv] = nextw; // dist 최단거리 배열값 업데이트
                 pq.push(make_pair(nextw, nextv)); // 추가 업데이트를 위해 업데이트된 거리와 도착지점 pq에 등록
-                route[nextv] = curr; // 갱신된 이전 경로를 업데이트
             }
         }
     }
@@ -42,7 +44,7 @@ int main() {
     cin.tie(0);
     cout.tie(NULL);
 
-    // 11779 최소비용 구하기
+    // 11779 최소비용 구하기2
     // 다익스트라
 
     int n, m, start, end, w;
@@ -58,23 +60,22 @@ int main() {
     cin >> s >> e;
 
     // 다익스트라 구하기 (s부터 시작하는 최단경로 계산)
-    dijkstra(s);
+    dijkstra(s, e);
 
     cout << dist[e] << '\n'; // s부터 e까지 가는 최소비용 출력
 
     // 순서 찾기
-    int tmp = end;
-    order.push_back(tmp);
-    while (route[tmp]) {
-        tmp = route[tmp];
+    int tmp = e;
+    route[s] = 0;
+    while (tmp) {
         order.push_back(tmp);
+        tmp = route[tmp];
     }
 
     cout << order.size() << '\n';
 
-    for (int i = order.size() - 1; i >= 0; --i) {
+    for (int i = order.size() - 1; i >= 0; --i)
         cout << order[i] << " ";
-    }
 
     return 0;
-} 
+}
