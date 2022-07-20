@@ -7,7 +7,7 @@ int main() {
     cout.tie(NULL);
 
     // 2446 별 찍기 - 9
-	  // 구현
+    // 구현
     int n;
     cin >> n;
 
