@@ -12,9 +12,10 @@ int main() {
     cin >> n;
     int target = 1;
     if (n == 1) cout << 1;
-    while (target < n) target *= 2;
-    if (target == n) cout << 1;
-    else cout << 0;
-
+    else {
+        while (target < n) target *= 2;
+        if (target == n) cout << 1;
+        else cout << 0;
+    }
     return 0;
 }
