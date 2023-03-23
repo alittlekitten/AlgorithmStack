@@ -42,6 +42,7 @@ int main() {
 	}
 	
 	// 누적합 처리하기, 가장 모기가 많을 때의 마릿수 처리하기
+	ans = time[0];
 	for (int i = 1; i < time.size(); ++i) {
 		time[i] += time[i - 1];
 		ans = max(ans, time[i]);
