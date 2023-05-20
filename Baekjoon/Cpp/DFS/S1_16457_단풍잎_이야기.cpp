@@ -41,7 +41,7 @@ int main() {
 	cin.tie(NULL);
 	cout.tie(NULL);
 
-	// 16458 단풍잎 이야기
+	// 16457 단풍잎 이야기
 	// 브루트포스
 	cin >> n >> m >> k;
 	for (int i = 0; i < m; ++i) {
