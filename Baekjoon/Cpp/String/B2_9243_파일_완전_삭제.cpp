@@ -3,11 +3,11 @@
 using namespace std;
 
 int main() {
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL);
-	cout.tie(NULL);
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
 
-	// 9243 파일 완전 삭제
+    // 9243 파일 완전 삭제
     // 문자열
     string s1, s2;
     int n;
