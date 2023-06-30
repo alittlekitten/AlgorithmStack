@@ -101,7 +101,7 @@ public class Main {
 		boolean isInfected = true;
 		for (int i = 0; i < N; ++i) {
 			for (int j = 0; j < N; ++j) {
-				if (arr[i][j] == -1 && realarr[i][j] == 0) isInfected = false;
+				if (arr[i][j] == -1 && realarr[i][j] != 1) isInfected = false;
 			}
 		}
 		
