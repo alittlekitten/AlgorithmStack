@@ -7,7 +7,7 @@ int main() {
 	cin.tie(NULL);
 	cout.tie(NULL);
 
-	// 26532 acres
+	// 26532 Acres
 	// 수학
 	int w, l;
 	cin >> w >> l;
