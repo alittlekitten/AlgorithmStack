@@ -8,7 +8,7 @@ int main() {
 	cout.tie(NULL);
 
 	// 1356 유진수
-	// 문자열
+	// 문자열, 수학
 	string n;
 	cin >> n;
 
