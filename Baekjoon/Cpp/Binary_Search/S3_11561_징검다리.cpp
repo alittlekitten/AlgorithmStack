@@ -16,12 +16,12 @@ int main() {
 	while (t--) {
 		cin >> n;
 		long long s = 1;
-		long long e = 1000000001;
+		long long e = 10000000001;
 
 		while (s <= e) {
 			long long m = (s + e) / 2;
 			long long tmp = m * (m + 1) / 2;
-			
+
 			if (tmp == n) {
 				// 정답
 				e = m;
