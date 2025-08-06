@@ -9,7 +9,7 @@ int main() {
 
 	// 33164 どら焼き (Dorayaki)
 	// 브루트포스
-	int n, m, a, b;
+	int n, m;
 	int arr1[101] = { 0 };
 	int arr2[101] = { 0 };
 
