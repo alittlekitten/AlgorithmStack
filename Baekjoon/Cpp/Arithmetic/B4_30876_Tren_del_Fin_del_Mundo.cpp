@@ -9,7 +9,6 @@ int main() {
 	// 30876 Tren del Fin del Mundo
 	// 수학
     int n, x, y;
-
     cin >> n;
     int xx = 1001;
     int yy = 1001;
