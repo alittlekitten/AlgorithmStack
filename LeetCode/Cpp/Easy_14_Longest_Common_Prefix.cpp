@@ -9,6 +9,6 @@ public:
             if (f[i] == l[i]) ans += f[i];
             else break;
         }
-        return res;
+        return ans;
     }
 };
